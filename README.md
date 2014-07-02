@@ -38,14 +38,12 @@ Config
       git: ["ssh+git://git@github.com/will123195/db.git"],
       packerTemplate: "",
       production: {
-        branch: "master",
         start: "npm run production",
         awsInstanceTag: "leveldb",
         awsInstanceQty: 3,
         openPorts: [1777]
       },
       staging: {
-        branch: "develop",
         start: "npm run staging",
         awsInstanceTag: "leveldb-staging",
         openPorts: [1777]

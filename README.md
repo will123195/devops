@@ -36,7 +36,7 @@ Config
     {
       name: "db",
       git: ["ssh+git://git@github.com/will123195/db.git"],
-      baseAmi: "centos6-nodejs", // or packerTemplate
+      baseAmi: "ubuntu-nodejs", // or packerTemplate
       production: {
         start: "npm run production",
         awsInstanceTag: "leveldb",

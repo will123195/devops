@@ -19,7 +19,7 @@ Usage: ops <command> [<args>]
 Commands:
   ami <instanceTag>
   config  
-  deploy <service> <gitTag> to <env>
+  deploy <service> [<gitTag>] to <env>
   instances
   lb <instanceTag>
   rotate <service> on <env>

@@ -22,6 +22,7 @@ Commands:
   deploy <service> [<gitTag>] to <env>
   instances
   lb <instanceTag>
+  register <service>
   rotate <service> on <env>
   ship <service> <gitTag> to <env>
   version <service>
@@ -31,23 +32,26 @@ Commands:
 Config
 ```js
 {  
-  services: {
-    db: {
+  services: [
+    {
+      name: "db",
       git: ["ssh+git://git@github.com/will123195/db.git"],
       packerTemplate: "",
       production: {
         branch: "master",
         start: "npm run production",
         awsInstanceTag: "leveldb",
-        awsInstanceQty: 3
+        awsInstanceQty: 3,
+        openPorts: [1777]
       },
       staging: {
         branch: "develop",
         start: "npm run staging",
-        awsInstanceTag: "leveldb-staging"
+        awsInstanceTag: "leveldb-staging",
+        openPorts: [1777]
       }
     }
-  },
+  ],
   alerts: {
 
   }

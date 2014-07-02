@@ -21,6 +21,7 @@ Commands:
   config  
   deploy <service> <gitTag> to <env>
   instances
+  lb <instanceTag>
   rotate <service> on <env>
   ship <service> <gitTag> to <env>
   version <service>
@@ -35,12 +36,13 @@ Config
       git: ["ssh+git://git@github.com/will123195/db.git"],
       packerTemplate: "",
       production: {
-        branch: "master"
+        branch: "master",
         start: "npm run production",
-        awsInstanceTag: "leveldb"
+        awsInstanceTag: "leveldb",
+        awsInstanceQty: 3
       },
       staging: {
-        branch: "develop"
+        branch: "develop",
         start: "npm run staging",
         awsInstanceTag: "leveldb-staging"
       }

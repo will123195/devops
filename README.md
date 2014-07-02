@@ -4,9 +4,12 @@
 - listen for githooks
 - daily/hourly backups
 - monitor instances/services
+- mirror commits to github/bitbucket
 
 ### Utiltity:
-- deploy code (liveswap)
+- deploy code 
+    - liveswap
+    - check travis build
 - create ami's
 
 
@@ -29,7 +32,7 @@ Config
 {  
   services: {
     db: {
-      git: "ssh+git://git@github.com/will123195/db.git",
+      git: ["ssh+git://git@github.com/will123195/db.git"],
       packerTemplate: "",
       production: {
         branch: "master"
